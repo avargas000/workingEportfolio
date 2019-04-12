@@ -1,12 +1,48 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from "./components/NavBar/Projects";
+import About from "./components/NavBar/About";
+import Contact from "./components/NavBar/Contact";
+import alogo from "./assets/a.png";
+import vlogo from "./assets/v.png";
+import ParallaxImage from "react-image-parallax2";
+import "./components/NavBar/style.scss";
+import "./app.scss";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function FrontPage() {
+  return (
+    <div>
+      <Router>
+        <div>
+          <nav class="navbar">
+            <li id="lefty">
+              <img id="navicon" src={alogo} />
+            </li>
+            <li id="lefty">
+              <img id="navicon" src={vlogo} />
+            </li>
+            <ul>
+              <Link id="left" to={"/contact"}>
+                Contact
+              </Link>
+            </ul>
+            <ul>
+              <Link to={"/about"}>About</Link>
+            </ul>
+          </nav>
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+          <Switch>
+            <Route exact path="/home" component={Home} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/about" component={About} />
+          </Switch>
+        </div>
+      </Router>
+      <div className="main" />
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<FrontPage />, rootElement);

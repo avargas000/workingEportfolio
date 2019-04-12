@@ -1,0 +1,56 @@
+#icon{
+height: 550px;
+border-radius: 25%;
+padding: 0 0 0 1em;
+margin-left: 80px;
+display: inline-block;
+}
+h3{
+  margin-left: 80px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: burlywood;
+}
+#bio{
+  margin-top: 10em;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  margin-top: 6em;
+  padding: 0 2em;
+}
+
+
+.page-wrapper {
+  margin: 15px;
+  background-color: white;
+
+}
+.divider{
+  border-bottom: 10px double gray;
+  margin-left: 50px;
+ padding-top:4em;
+ padding-bottom: 4em;
+  width: 95%;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.right-column {
+
+  height: inherit;
+}
+
+.left-column {
+
+  height: inherit;
+}
